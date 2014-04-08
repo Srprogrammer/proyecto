@@ -1,5 +1,5 @@
 <?php
-include_once('../conexionBD.php');
+include_once('./conexionBD.php');
  if( !isset($_POST['nombreEvento'])|| !isset($_POST['fechaInicio']) || !isset($_POST['fechaFin']) || 
      !isset($_POST['horaInicio']) || !isset($_POST['horaFin']) || !isset($_POST['descripcion']) || 
     !isset($_POST['localizacion'])  || !isset($_POST['altura']) || !isset($_POST['latitud']) || !isset($_POST['precio'] ) )

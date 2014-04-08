@@ -1,5 +1,5 @@
 <?php
-   include_once('../conexionBD.php');
+   include_once('./conexionBD.php');
    if(!isset($_GET['id']))
         return false;
    

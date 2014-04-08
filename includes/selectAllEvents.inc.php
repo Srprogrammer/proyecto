@@ -1,5 +1,5 @@
 <?php
-include_once('../conexionBD.php');
+include_once('./conexionBD.php');
 if(isset($_POST['filtro']))
     $sql="SELECT * FROM eventos WHERE titulo like '%".$_POST['filtro']."%'";
 else

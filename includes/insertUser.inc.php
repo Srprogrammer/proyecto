@@ -1,5 +1,5 @@
 <?php
-include_once('../conexionBD.php');
+include_once('./conexionBD.php');
 /**
 * Compruebo que los datos no sean NULL
 */
