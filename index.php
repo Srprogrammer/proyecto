@@ -1,6 +1,7 @@
+ï»¿<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
-
+<?php require_once('includes/functions.php'); ?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,10 @@
     <link href="css/modern-business.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<style>
+        body{
+            padding-top:0;
+            
+        }
 		.dropdown label , .dropdown input , .dropdown button{
 			margin-bottom:10px;
 		}
@@ -25,88 +30,14 @@
 	#tblFormulario tr td{
 		padding:5px;
 	}
-
+        .navbar{
+            margin-bottom:0;
+        }
 	</style>
 </head>
-
 <body>
-
-	<!-- Barra de navegación -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
-                <a class="navbar-brand" href="index.html">Proyecto Eventos</a>
-            </div>
-
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav navbar-right">
-					   <form class="navbar-form navbar-left" role="search">
-					        <div class="form-group">
-				          <input type="text" class="form-control" placeholder="">
-				        </div>
-				        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-				      </form>
-                    <li><a href="home.html"><span class="glyphicon glyphicon-home"></span> Home</a>
-                    </li>
-                    <li class="dropdown"><a href="events.html" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-calendar"></span> Events<b class="caret"></b></a>
-					 <ul class="dropdown-menu">
-                            <li><a href="portfolio-1-col.html">Sports</a>
-                            </li>
-                            <li><a href="portfolio-2-col.html">Cultural</a>
-                            </li>
-                            <li><a href="portfolio-3-col.html">Music</a>
-                            </li>
-                            <li><a href="portfolio-4-col.html">Promotions</a>
-                            </li>
-							<li><a href="portfolio-1-col.html">Academic</a>
-                            </li>
-                            <li><a href="portfolio-2-col.html">Fashion</a>
-                            </li>
-                            <li><a href="portfolio-3-col.html">Social</a>
-                            </li>
-                            <li><a href="portfolio-4-col.html">Other</a>
-                            </li>
-					  </ul>
-                    </li>
-                    <li><a href="news.php"><span class="glyphicon glyphicon-globe"></span> News</a>
-
-					 <li><a href="registrar.php" data-toggle="modal" data-target="#miRegistro"><span class="glyphicon glyphicon-pencil"></span> Register</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="glyphicon glyphicon-user"></span> Login<b class="caret"></b></a>
-					  <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-						<!-- LOGIN INICIO -->
-						 <form class="navbar-form navbar-left" role="search">
-						  <div class="form-group">
-							 <label for="email">Email : </label>
-							 <input type="text" placeholder="" name="email" >
-							 <label for="pass">Password : </label>
-							 <input type="password" placeholder="" name="pass" >
-						  </div>
-							  <button class="btn btn-primary" type="button">Enviar</button>
-							  <button class="btn" type="button">Reset</button>
-						</form>
-						<!-- LOGIN FIN -->
-						</div>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-
-	<!-- Empieza la Slider -->
+    <?php include('cabecera.php') ?>
+  	<!-- Empieza la Slider -->
     <div id="myCarousel" class="carousel slide">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -193,7 +124,7 @@
     <!-- /.section-colored -->
 
 
-<!-- Empieza la sección de eventos -->
+<!-- Empieza la secciÃ³n de eventos -->
     <div class="section">
 
         <div class="container">
@@ -240,7 +171,7 @@
     </div>
     <!-- /.section -->
 
-<!-- Aqui irá el mapa -->
+<!-- Aqui irÃ¡ el mapa -->
     <div class="section-colored">
 
         <div class="container">
@@ -270,7 +201,7 @@
     </div>
     <!-- /.section-colored -->
 
-<!-- Aquí estará un calendario. -->
+<!-- AquÃ­ estarÃ¡ un calendario. -->
     <div class="section">
 
         <div class="container">
@@ -301,7 +232,7 @@
     <!-- /.section -->
 
 
-<!-- Se podría eleminnar, o dar opción a crear un evento. -->
+<!-- Se podrÃ­a eleminnar, o dar opciÃ³n a crear un evento. -->
     <div class="container">
 
         <div class="row well">
@@ -343,25 +274,25 @@
 			  </div>
 			  <div class="modal-body">
 			  <!-- CONTENIDO VENTANA EMERGENTE REGISTRAR INICIO -->
-				<form name="formularioUsuario" action="" method="post" >
+				<form name="formularioUsuario" action="register.php" method="post" >
 					<table cellspacing="5" id="tblFormulario">
 						<tr>
 							<td><label for="nombre">Enter Name </label></td>
-							<td>   <input type="text" placeholder="nombre" name="nombre"></td>
+							<td><input type="text" placeholder="nombre" name="nombre"/></td>
 						</tr>
 
 						<tr>
 							<td>	<label for="email">Enter Email </label></td>
-							<td> <input type="text" placeholder="e-mail" name="email"></td>
+							<td> <input type="text" placeholder="e-mail" name="email"/></td>
 						</tr>
 
 						<tr>
-							<td>	<label for="password">Enter Password </label></td>
-							<td> <input type="password" placeholder="password" name="password"></td>
+							<td> <label for="password">Enter Password </label></td>
+							<td> <input type="password" placeholder="password" name="password"/></td>
 						</tr>
 
 						<tr>
-							<td> <button class="btn " type="button" onclick="formularioUsuario.submit()">Register</button></td>
+							<td> <button class="btn " type="submit"  name="btnRegister">Register</button></td>
 							<td> <button class="btn " type="button" onclick="formularioUsuario.reset()">Reset</button></td>
 						</tr>
 					</table>
@@ -381,8 +312,26 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/modern-business.js"></script>
 	<script>
-
-
+        
+        $(document).ready(function(){
+           /* $("#frmLogin").submit(function(e){
+                e.preventDefault();
+                console.log("bieen");
+                $.ajax({
+                      url:  $(this).attr("action"),
+                      data: $(this).serialize(),
+                      type: "post",
+                      success: function(data) {
+                      $("body").append(data);
+                      },
+                      error:function (xhr, ajaxOptions, thrownError) {
+                        alert('se produjo un error');
+                      }
+                    });
+                
+            });*/
+            
+        })
 
 	</script>
 </body>
